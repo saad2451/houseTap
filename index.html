@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamster Mining</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+            font-size: 24px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 300px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .balance {
+            font-size: 20px;
+            margin: 15px 0;
+        }
+
+        .status {
+            color: #555;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        🐹 Hamster Mining
+    </div>
+
+    <div class="content">
+        <div class="card">
+            <h2>Welcome to Mining!</h2>
+            <p class="balance">Balance: <span id="balance">0.00</span> coins</p>
+            <button class="button" onclick="startMining()">Mine Coins</button>
+            <p class="status" id="status">Ready to mine...</p>
+        </div>
+    </div>
+
+    <script>
+        let balance = 0;
+
+        function startMining() {
+            const statusEl = document.getElementById('status');
+            statusEl.textContent = "Mining in progress...";
+
+            setTimeout(() => {
+                const coins = (Math.random() * 0.05).toFixed(2); // توليد كمية عشوائية من العملات
+                balance += parseFloat(coins);
+                document.getElementById('balance').textContent = balance.toFixed(2);
+                statusEl.textContent = `Successfully mined ${coins} coins! 🎉`;
+            }, 2000); // محاكاة التعدين لمدة 2 ثانية
+        }
+    </script>
+</body>
+</html>
