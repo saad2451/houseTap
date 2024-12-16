@@ -6,7 +6,7 @@ BOT_TOKEN = "7547663858:AAGOC_rmsGMb2gNT-wnC9qa_F5NBXH3iyUc"
 bot = telebot.TeleBot(BOT_TOKEN)
 
 # رابط صفحة MiniApp
-MINIAPP_URL = "https://your-web-app-url.com"  # استبدل بالرابط الفعلي
+MINIAPP_URL = "https://saad2451.github.io/houseTap/"  # استبدل بالرابط الفعلي
 
 # دالة بدء البوت
 @bot.message_handler(commands=["start"])
